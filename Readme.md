@@ -23,7 +23,7 @@ services:
   Vendor\MyExt\EventListener\ReactToGeneratedUri:
     tags:
       - name: event.listener
-        identifier: 'GeoIpMarketLanguageSegmentsSwapper'
+        identifier: 'MyExtReactToGeneratedUri'
         event: Smic\PageRouterEvent\Event\PageUriGenerated
 ````
 
