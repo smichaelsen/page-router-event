@@ -27,7 +27,7 @@ services:
         event: Smic\PageRouterEvent\Event\PageUriGenerated
 ````
 
-Your event listener receives a `Smic\PageRouterEvent\Event\PageUriGenerated` that offers:
+Your event listener receives a `Smic\PageRouterEvent\Event\PageUriGenerated` event that offers:
 
 * getters for input data that were used to generate the URL `->getFragment()`, `->getParameters()`, `->getRoute()`, `->getSite()`, `->getType()`
 * a getter for the generated URI `->getUri()`
