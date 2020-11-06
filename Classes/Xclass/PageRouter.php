@@ -16,7 +16,7 @@ class PageRouter extends \TYPO3\CMS\Core\Routing\PageRouter
         $uri = parent::generateUri($route, $parameters, $fragment, $type);
 
         $eventDispatcher = GeneralUtility::makeInstance(EventDispatcher::class);
-        $event = new PageUriGenerated($fragment, $parameters, $route, $this->site, $type, $uri);
+        $event = new PageUriGenerated($fragment, $this, $parameters, $route, $this->site, $type, $uri);
         $eventDispatcher->dispatch($event);
         return $event->getUri();
     }

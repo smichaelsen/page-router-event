@@ -31,6 +31,7 @@ Your event listener receives a `Smic\PageRouterEvent\Event\PageUriGenerated` eve
 
 * getters for input data that were used to generate the URL `->getFragment()`, `->getParameters()`, `->getRoute()`, `->getSite()`, `->getType()`
 * a getter for the generated URI `->getUri()`
-* a setter to replace the generated URI `->setUri($uri)`
+* the PageRouter itself `->getPageRouter()`
+* and a setter to replace the generated URI `->setUri($uri)`
 
 If you're not familiar with PSR-14 event handling in TYPO3 have a look at: https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Hooks/EventDispatcher/Index.html
