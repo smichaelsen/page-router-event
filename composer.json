@@ -9,5 +9,10 @@
     "psr-4": {
       "Smic\\PageRouterEvent\\": "Classes"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "page_router_event"
+    }
   }
 }
