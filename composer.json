@@ -2,8 +2,17 @@
   "name": "smic/page-router-event",
   "type": "typo3-cms-extension",
   "description": "Sends the missing PageUriGenerated PSR-14 event from the PageRouter",
+  "config": {
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
   "require": {
     "typo3/cms-core": "^12.4 || ^13.4"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1"
   },
   "autoload": {
     "psr-4": {
@@ -14,5 +23,8 @@
     "typo3/cms": {
       "extension-key": "page_router_event"
     }
+  },
+  "scripts": {
+    "phpstan": "phpstan analyse"
   }
 }
