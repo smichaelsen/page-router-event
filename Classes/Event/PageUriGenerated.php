@@ -5,47 +5,35 @@ declare(strict_types=1);
 namespace Smic\PageRouterEvent\Event;
 
 use Psr\Http\Message\UriInterface;
+use TYPO3\CMS\Core\Domain\Page;
 use TYPO3\CMS\Core\Routing\PageRouter;
 use TYPO3\CMS\Core\Site\Entity\Site;
 
 class PageUriGenerated
 {
-    /**
-     * @var string
-     */
-    protected $fragment;
+    protected string $fragment;
 
-    /**
-     * @var array
-     */
-    protected $parameters;
+    protected array $parameters;
 
-    /**
-     * @var PageRouter
-     */
-    protected $pageRouter;
+    protected PageRouter $pageRouter;
 
-    /**
-     * @var array|string
-     */
-    protected $route;
+    protected array|string|int|Page $route;
 
-    /**
-     * @var Site
-     */
-    protected $site;
+    protected Site $site;
 
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
-    /**
-     * @var UriInterface
-     */
-    protected $uri;
+    protected UriInterface $uri;
 
-    public function __construct(string $fragment, PageRouter $pageRouter, array $parameters, $route, Site $site, string $type, UriInterface $uri)
+    public function __construct(
+        string $fragment,
+        PageRouter $pageRouter,
+        array $parameters,
+        array|string|int|Page $route,
+        Site $site,
+        string $type,
+        UriInterface $uri,
+    )
     {
         $this->fragment = $fragment;
         $this->pageRouter = $pageRouter;
@@ -71,10 +59,7 @@ class PageUriGenerated
         return $this->pageRouter;
     }
 
-    /**
-     * @return array|string
-     */
-    public function getRoute()
+    public function getRoute(): array|string|int|Page
     {
         return $this->route;
     }
